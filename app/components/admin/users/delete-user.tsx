@@ -1,0 +1,42 @@
+// Hooks
+import { useUsersFormState } from "@/app/hooks/useUsersFormState";
+import { useUsersFormSubmit } from "@/app/hooks/useUsersFormSubmit";
+
+// Components
+import { StyledButton } from "@/app/ui/buttons";
+
+export default function DeleteUser({
+  selectedUser,
+  onClose,
+  refetchData,
+}: any) {
+  const { loading, error, setLoading, setError } = useUsersFormState({});
+  const { handleDelete } = useUsersFormSubmit({
+    setLoading,
+    setError,
+    onClose,
+    refetchData,
+    selectedUser,
+  });
+
+  return (
+    <div className="w-full bg-white text-black">
+      {error && <p className="text-center text-red-500">{error}</p>}
+
+      <p>Are you sure you want to delete the selected User ?</p>
+
+      <hr className="my-4 border-gray-300" />
+
+      {/* Submit / Cancel */}
+      <div className="flex flex-row gap-4 justify-end items-center">
+        <StyledButton label="Cancel" onClick={onClose} bgColor="bg-blue-500" />
+        <StyledButton
+          label="Delete"
+          onClick={handleDelete}
+          loading={loading}
+          bgColor="bg-red-500"
+        />
+      </div>
+    </div>
+  );
+}
