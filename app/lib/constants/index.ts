@@ -3,6 +3,14 @@ export const classes = {
     "w-full p-2 rounded-lg bg-white border border-[#24305E] focus:outline-0 text-black",
 };
 
+export const SETTINGS_TABS = {
+  windows: "Windows Softwares",
+  mac: "Mac Softwares",
+  users: "Admin / IT Users",
+  resetPassword: "Change Password",
+  onedrive: "Connect to Onedrive",
+};
+
 export const USER_CATEGORIES = [
   "ASD Staff",
   "Elementary",

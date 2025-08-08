@@ -17,7 +17,7 @@ export async function DELETE(req: NextRequest) {
 
   // 2. Get file ID of the source file
   const deleteRes = await fetch(
-    `https://graph.microsoft.com/v1.0/me/drive/root:/Softwares_Test/${filepath}`,
+    `https://graph.microsoft.com/v1.0/me/drive/root:/Softwares/${filepath}`,
     {
       method: "DELETE",
       headers: {

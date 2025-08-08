@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { USER_CATEGORY_SHORT_MAP } from "@/app/lib/constants";
 import { StyledButton } from "@/app/ui/buttons";
+import { extractOriginalFilename } from "@/app/lib/utils";
 
 type RenderCellProps = {
   item: any;
@@ -41,7 +42,7 @@ const RenderCells = ({ item, keyName, handleAction }: RenderCellProps) => {
       }
       return "-";
     case "file_url":
-      const url = item?.[keyName];
+      const url = extractOriginalFilename(item?.[keyName]);
       if (typeof url === "string" && url) {
         const filename = url.split("/").pop();
         return filename || "-";

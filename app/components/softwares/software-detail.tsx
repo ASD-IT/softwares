@@ -15,12 +15,6 @@ const SoftwareDetail: React.FC<SoftwareDetailProps> = ({
   const { name, description, instructions, image_url, file_url } = software;
   const [loading, setLoading] = useState(false);
 
-  const imgUrl = useMemo(() => {
-    if (image_url) return getBasePublicUrl(image_url);
-
-    return null;
-  }, []);
-
   const handleDownload = async () => {
     setLoading(true);
     try {
@@ -49,7 +43,7 @@ const SoftwareDetail: React.FC<SoftwareDetailProps> = ({
     <div className={styles.card}>
       <div className="flex items-center gap-4">
         <Image
-          src={imgUrl || "/images/download.png"}
+          src={image_url || "/images/download.png"}
           alt={name}
           width={100}
           height={100}

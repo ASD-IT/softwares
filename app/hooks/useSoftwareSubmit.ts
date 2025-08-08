@@ -94,7 +94,7 @@ export const useSoftwareSubmit = ({
       // Case 2: Image removed & no new image
       else if (imageFile === null && selectedSoftware.image_url) {
         await handleRemoveDocument(selectedSoftware.image_url, "images");
-        data.image_url = null;
+        data.image_url = "removed";
       }
     }
 
@@ -115,7 +115,9 @@ export const useSoftwareSubmit = ({
       ...(data.name && { name: data.name }),
       ...(data.description && { description: data.description }),
       ...(data.instructions && { instructions: data.instructions }),
-      ...(data.image_url && { image_url: data.image_url }),
+      ...((data.image_url || data.image_url === "removed") && {
+        image_url: data.image_url === "removed" ? null : data.image,
+      }),
       ...(data.file_url && { file_url: data.file_url }),
     };
     const response = await updateSoftware(selectedSoftware.id, softwareData);

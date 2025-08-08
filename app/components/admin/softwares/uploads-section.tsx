@@ -48,7 +48,10 @@ export default function UploadsSection({ details, handleChange }: any) {
         />
       ) : (
         <DragAndDrop
-          setSelectedFiles={(file: File[]) => handleChange(file[0], "image")}
+          setSelectedFiles={(file: File[], field) =>
+            handleChange(file[0], field)
+          }
+          field="image"
           label="Software Icon"
           allowedTypes={iconFiles}
         />
@@ -63,7 +66,10 @@ export default function UploadsSection({ details, handleChange }: any) {
         />
       ) : (
         <DragAndDrop
-          setSelectedFiles={(file: File[]) => handleChange(file[0], "file")}
+          setSelectedFiles={(file: File[], field) =>
+            handleChange(file[0], field)
+          }
+          field="file"
           label="Software File"
           allowedTypes={softwareFiles}
           required={true}

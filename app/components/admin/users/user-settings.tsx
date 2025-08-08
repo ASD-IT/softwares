@@ -89,24 +89,24 @@ export default function UserSettings() {
   };
 
   return (
-    <div className="mt-4 bg-transparent p-2 w-full h-[84vh] flex flex-col overflow-hidden">
+    <div className="mt-2 bg-white rounded-md w-full h-[84vh] flex flex-col overflow-hidden space-y-2">
       {/* Header */}
-      <div className="py-1 px-2 bg-green-600 rounded-md shadow z-10 space-x-4">
-        <div className="flex flex-row items-center justify-between px-2">
+      <div className="py-1 px-2 bg-pink-800 rounded-md shadow z-10 space-x-4">
+        <div className="flex flex-row items-center justify-between">
           {/* Add */}
           <StyledButton
-            label="Add"
+            label="Add New User"
             type="button"
-            bgColor="bg-blue-500"
+            bgColor="bg-white"
             onClick={() => handleAction("add")}
           />
           {/* Total */}
-          <div className="text-black">Total: {users.length || 0}</div>
+          <div className="text-white">Total: {users.length || 0}</div>
         </div>
       </div>
 
       {/* Scrollable Table Content */}
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 flex flex-col overflow-hidden bg-violet-100 rounded-md">
         <TableList
           columns={USER_COLUMNS}
           data={users ?? []}

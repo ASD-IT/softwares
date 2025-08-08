@@ -90,7 +90,7 @@ const StyledButton = ({
         padding || "px-4 py-2"
       } rounded-md flex justify-center items-center ${
         enableButtons
-          ? `text-white font-bold transform transition-transform duration-500 ease-in-out hover:scale-95 cursor-pointer ${
+          ? `text-black font-bold transform transition-transform duration-500 ease-in-out hover:scale-95 cursor-pointer ${
               bgColor || "bg-blue-500"
             }`
           : "text-zinc-300 cursor-not-allowed bg-gray-500"

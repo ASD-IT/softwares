@@ -21,14 +21,14 @@ const TableList: React.FC<TableProps> = ({
   classname = "",
 }) => {
   return (
-    <div className={`overflow-x-auto py-2 ${classname}`}>
+    <div className={`overflow-x-auto ${classname}`}>
       <table className="min-w-full border-collapse h-full">
         <thead>
           <tr>
             {columns.map((column, index) => (
               <th
                 key={index}
-                className={`px-4 py-2 bg-blue-400 text-left font-medium uppercase text-white whitespace-nowrap ${
+                className={`px-4 py-2 bg-blue-500 text-left font-medium uppercase text-white whitespace-nowrap ${
                   index === 0
                     ? "rounded-l-lg"
                     : index === columns.length - 1
@@ -73,7 +73,7 @@ const TableList: React.FC<TableProps> = ({
             data.map((row, rowIndex) => (
               <tr
                 key={rowIndex}
-                className="group hover:bg-blue-500 cursor-pointer"
+                className="group hover:bg-pink-800 cursor-pointer"
                 onClick={() => handleAction?.(row.id) || null}
               >
                 {columns.map((column, colIndex) => (

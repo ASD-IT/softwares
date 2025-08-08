@@ -23,7 +23,7 @@ const SoftwaresActions: React.FC<SoftwaresActionsProps> = ({
   }, []);
 
   return (
-    <div className="flex flex-row items-center justify-between px-2">
+    <div className="flex flex-row items-center justify-between">
       <div className="flex flex-row items-center space-x-2">
         {/* Search - email / name */}
         <div className="relative inline-block text-left">
@@ -32,7 +32,7 @@ const SoftwaresActions: React.FC<SoftwaresActionsProps> = ({
             value={searchQuery}
             onChange={(e) => handleFilters("searchQuery", e.target.value)}
             placeholder="Search by name..."
-            className={`border text-black rounded-md bg-white border-gray-400 p-2`}
+            className={`border text-white rounded-md bg-white border-white p-2`}
           />
         </div>
 
@@ -56,13 +56,13 @@ const SoftwaresActions: React.FC<SoftwaresActionsProps> = ({
         <StyledButton
           label="Add New Software"
           type="button"
-          bgColor="bg-blue-500"
+          bgColor="bg-white hover:bg-cyan-500"
           onClick={() => handleAction("add")}
         />
       </div>
 
       {/* Total */}
-      <div className="text-black">Total: {total}</div>
+      <div className="text-white">Total: {total}</div>
     </div>
   );
 };

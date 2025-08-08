@@ -48,7 +48,7 @@ const ResetPassword: React.FC = () => {
   };
 
   return (
-    <div className="bg-transparent w-full h-[84vh] flex items-center justify-center">
+    <div className="mt-2 rounded-md bg-gradient-to-r from-[#00C9FF] to-cyan-200 w-full h-[84vh] flex items-center justify-center">
       <div className="w-[500px] mx-auto my-44 p-6 bg-white rounded shadow">
         {error && <div className="text-red-600 text-center">{error}</div>}
         {success && <div className="text-green-600 text-center">{success}</div>}

@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
   const buffer = Buffer.from(await file.arrayBuffer());
 
   // 3. Upload file
-  const uploadUrl = `https://graph.microsoft.com/v1.0/me/drive/root:/Softwares_Test/${filepath}/${filename}:/content`;
+  const uploadUrl = `https://graph.microsoft.com/v1.0/me/drive/root:/Softwares/${filepath}/${filename}:/content`;
   const uploadRes = await fetch(uploadUrl, {
     method: "PUT",
     headers: {

@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
 
   if (!code)
     return NextResponse.redirect(
-      "https://software-downloads.vercel.app/admin/settings?onedrive=codemissing"
+      "https://softwares.asd.edu.qa/admin/settings?onedrive=codemissing"
     );
 
   const tokenRes = await fetch(
@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
   if (!tokenData.refresh_token) {
     console.error("Token Error:", tokenData);
     return NextResponse.redirect(
-      "https://software-downloads.vercel.app/admin/settings?onedrive=tokenerror"
+      "https://softwares.asd.edu.qa/admin/settings?onedrive=tokenerror"
     );
   }
 
@@ -43,11 +43,11 @@ export async function GET(req: NextRequest) {
   if (error) {
     console.error("Supabase insert error:", error);
     return NextResponse.redirect(
-      "https://software-downloads.vercel.app/admin/settings?onedrive=dberror"
+      "https://softwares.asd.edu.qa/admin/settings?onedrive=dberror"
     );
   }
 
   return NextResponse.redirect(
-    "https://software-downloads.vercel.app/admin/settings?onedrive=connected"
+    "https://softwares.asd.edu.qa/admin/settings?onedrive=connected"
   );
 }

@@ -87,9 +87,9 @@ export default function SoftwareSettings({ type }: SoftwareSettingsProps) {
   );
 
   return (
-    <div className="mt-4 bg-transparent p-2 w-full h-[84vh] flex flex-col overflow-hidden">
+    <div className="mt-2 bg-white rounded-md w-full h-[84vh] flex flex-col overflow-hidden space-y-2">
       {/* Header */}
-      <div className="py-1 px-2 bg-green-600 rounded-md shadow z-10 space-x-4">
+      <div className="py-1 px-2 bg-pink-800 rounded-md shadow z-10 space-x-4">
         <SoftwaresActions
           total={softwares?.length || 0}
           filterValue={filterValue}
@@ -99,7 +99,7 @@ export default function SoftwareSettings({ type }: SoftwareSettingsProps) {
       </div>
 
       {/* Scrollable Table Content */}
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 flex flex-col overflow-hidden bg-violet-100 rounded-md">
         <TableList
           columns={SOFTWARES_COLUMNS}
           data={filteredData ?? []}

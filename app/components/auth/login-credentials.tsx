@@ -58,7 +58,7 @@ const LoginCredentials = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 bg-white rounded-md text-black p-4 w-full md:w-1/2 lg:w-1/4"
+      className="space-y-4 bg-white rounded-md text-black py-8 px-4 w-full md:w-1/2 lg:w-1/4"
     >
       {error && <p className="text-red-500 text-center">{error}</p>}
 

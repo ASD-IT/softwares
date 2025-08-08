@@ -9,11 +9,13 @@ export default function DragAndDrop({
   setSelectedFiles,
   allowedTypes,
   required = false,
+  field,
 }: {
   label: string;
-  setSelectedFiles: (state: any) => void;
+  setSelectedFiles: (state1: any, state2: string) => void;
   allowedTypes?: string[];
   required?: boolean;
+  field: string;
 }) {
   const [error, setError] = useState("");
 
@@ -72,9 +74,9 @@ export default function DragAndDrop({
     });
 
     if (validFiles.length > 0) {
-      setSelectedFiles(validFiles);
+      setSelectedFiles(validFiles, field);
       const fileInput = document.getElementById(
-        "file-input"
+        field
       ) as HTMLInputElement | null;
       if (fileInput) {
         fileInput.value = "";
@@ -99,12 +101,12 @@ export default function DragAndDrop({
             type="file"
             onChange={(e) => handleFileSelect(e)}
             style={{ display: "none" }}
-            id="file-input"
-            name="selectedFiles"
+            id={field}
+            name={field}
             accept={allowedTypes?.join(", ")}
           />
           <label
-            htmlFor="file-input"
+            htmlFor={field}
             className="text-[#08649e] cursor-pointer w-full font-semibold"
           >
             Browse files

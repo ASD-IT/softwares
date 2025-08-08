@@ -55,7 +55,7 @@ CREATE TABLE software_user_categories (
 
 -- Attach the trigger to tables
 -- CREATE TRIGGER set_updated_at
--- BEFORE UPDATE ON users
+-- BEFORE UPDATE ON softwares_users
 -- FOR EACH ROW
 -- EXECUTE FUNCTION update_updated_at_column();
 
