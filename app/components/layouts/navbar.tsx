@@ -49,7 +49,7 @@ const MenuList = ({ menu, userCategory }: any) => {
             : item.href
         }
         key={index}
-        className={`w-full inline-flex items-center gap-4 text-white font-semibold py-5 px-2 rounded-md hover:bg-blue-500 hover:text-white ${
+        className={`w-full inline-flex items-center gap-4 text-white font-semibold py-2 lg:py-5 px-2 rounded-md hover:bg-blue-500 hover:text-white ${
           isActive ? "bg-blue-500" : `${bgColors.main}`
         }`}
       >
@@ -103,7 +103,7 @@ export default function Navbar({ userCategoryParam }: any) {
   }, [userCategory, isAdmin]);
 
   return (
-    <div className="flex h-full flex-col md:w-64 md:h-screen bg-gray-50 shadow-inner px-3 py-4 lg:px-2 lg:overflow-y-auto">
+    <div className="flex h-full flex-col lg:w-64 lg:h-screen bg-gray-50 shadow-inner px-3 py-4 lg:px-2 lg:overflow-y-auto">
       {/* Title/Logo */}
       <div
         className={`w-full flex flex-col items-center justify-center py-4 gap-2 ${bgColors.main} rounded-md`}
@@ -128,12 +128,12 @@ export default function Navbar({ userCategoryParam }: any) {
         </div>
       ) : (
         <>
-          <div className="w-full flex flex-col gap-4 py-4">
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-4 py-4">
             <MenuList menu={menu} userCategory={userCategory} />
 
             {showLogout && (
               <div
-                className={`inline-flex items-center gap-4 font-semibold py-5 px-2 rounded-md ${bgColors.main} hover:bg-blue-500 hover:text-white cursor-pointer`}
+                className={`inline-flex items-center gap-4 font-semibold py-2 lg:py-5 px-2 rounded-md ${bgColors.main} hover:bg-blue-500 hover:text-white cursor-pointer`}
                 role="button"
                 aria-label="Logout"
                 onClick={handleLogout}
@@ -153,7 +153,7 @@ export default function Navbar({ userCategoryParam }: any) {
 
           {/* Helpdesk (fills remaining space) */}
           {!showLogout && (
-            <div className="flex grow items-end justify-center rounded-md bg-cyan-100 p-4">
+            <div className="flex grow items-end justify-center rounded-md bg-cyan-100 p-2 lg:p-4">
               <Snippet
                 size="sm"
                 symbol="@"

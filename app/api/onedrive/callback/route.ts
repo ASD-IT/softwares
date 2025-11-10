@@ -4,10 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const code = searchParams.get("code");
+  const { NEXTAUTH_URL } = process.env;
+  const baseUrl = NEXTAUTH_URL || "https://softwares.asd.edu.qa";
 
   if (!code)
     return NextResponse.redirect(
-      "https://softwares.asd.edu.qa/admin/settings?onedrive=codemissing"
+      `${baseUrl}/admin/settings?onedrive=codemissing`
     );
 
   const tokenRes = await fetch(
@@ -30,7 +32,7 @@ export async function GET(req: NextRequest) {
   if (!tokenData.refresh_token) {
     console.error("Token Error:", tokenData);
     return NextResponse.redirect(
-      "https://softwares.asd.edu.qa/admin/settings?onedrive=tokenerror"
+      `${baseUrl}/admin/settings?onedrive=tokenerror`
     );
   }
 
@@ -42,12 +44,8 @@ export async function GET(req: NextRequest) {
 
   if (error) {
     console.error("Supabase insert error:", error);
-    return NextResponse.redirect(
-      "https://softwares.asd.edu.qa/admin/settings?onedrive=dberror"
-    );
+    return NextResponse.redirect(`${baseUrl}/admin/settings?onedrive=dberror`);
   }
 
-  return NextResponse.redirect(
-    "https://softwares.asd.edu.qa/admin/settings?onedrive=connected"
-  );
+  return NextResponse.redirect(`${baseUrl}/admin/settings?onedrive=connected`);
 }

@@ -38,6 +38,11 @@ export async function getNewAccessToken() {
   );
 
   const tokenData = await tokenRes.json();
+  if (!tokenData.access_token) {
+    console.error("Missing access_token in response:", tokenData);
+    throw new Error("No access token received from Microsoft");
+  }
+
   const accessToken = tokenData.access_token;
 
   if (!accessToken) {

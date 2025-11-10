@@ -89,7 +89,7 @@ export default function SoftwareSettings({ type }: SoftwareSettingsProps) {
   return (
     <div className="mt-2 bg-white rounded-md w-full h-[84vh] flex flex-col overflow-hidden space-y-2">
       {/* Header */}
-      <div className="py-1 px-2 bg-pink-800 rounded-md shadow z-10 space-x-4">
+      <div className="py-1 px-2 bg-pink-800 rounded-md shadow z-10">
         <SoftwaresActions
           total={softwares?.length || 0}
           filterValue={filterValue}

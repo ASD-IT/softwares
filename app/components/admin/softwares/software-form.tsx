@@ -57,7 +57,7 @@ export default function SoftwareForm({
     <div className="space-y-4">
       {error && <p className="text-red-500 text-center">{error}</p>}
 
-      <form className="grid grid-cols-2 gap-4">
+      <form className="grid md:grid-cols-2 gap-4">
         {/* Name of the software */}
         <StyledInput
           label="Software Name"

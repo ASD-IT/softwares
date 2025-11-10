@@ -90,7 +90,7 @@ const StyledButton = ({
       onClick={onClick}
       className={`min-w-24 ${
         padding || "px-4 py-2"
-      } rounded-md flex justify-center items-center ${
+      } rounded-md flex justify-center items-center whitespace-nowrap ${
         enableButtons
           ? `${
               textColor || "text-white"

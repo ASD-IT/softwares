@@ -8,7 +8,7 @@ export const SETTINGS_TABS = {
   mac: "Mac Softwares",
   users: "Admin / IT Users",
   resetPassword: "Change Password",
-  // onedrive: "Connect to Onedrive",
+  onedrive: "Connect to Onedrive",
 };
 
 export const USER_CATEGORIES = [

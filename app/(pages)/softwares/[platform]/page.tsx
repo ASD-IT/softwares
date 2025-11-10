@@ -70,8 +70,8 @@ const SoftwaresByPlatformPage = () => {
       } rounded-md text-black overflow-hidden`}
     >
       {/* Header */}
-      <div className="w-full flex flex-row items-center justify-between p-4">
-        <h1 className="text-lg md:text-2xl font-bold text-black">
+      <div className="w-full flex flex-col md:flex-row md:items-center justify-between py-4 px-2 md:px-4 gap-4 md:gap-0">
+        <h1 className="text-lg md:text-xl xl:text-2xl font-bold text-black">
           Softwares for{" "}
           {platform ? firstLetterCapital(platform) : "Unknown Platform"}
         </h1>

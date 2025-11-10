@@ -23,23 +23,21 @@ const SoftwaresActions: React.FC<SoftwaresActionsProps> = ({
   }, []);
 
   return (
-    <div className="flex flex-row items-center justify-between">
-      <div className="flex flex-row items-center space-x-2">
+    <div className="flex flex-col md:flex-row md:items-center justify-between py-2 gap-2 md:gap-0">
+      <div className="w-full flex flex-col md:flex-row md:items-center gap-2">
         {/* Search - email / name */}
-        <div className="relative inline-block text-left">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => handleFilters("searchQuery", e.target.value)}
-            placeholder="Search by name..."
-            className={`border text-black rounded-md bg-white border-white p-2`}
-          />
-        </div>
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => handleFilters("searchQuery", e.target.value)}
+          placeholder="Search by name..."
+          className={`border text-black rounded-md bg-white border-white p-2`}
+        />
 
         {/* Filter by User Category */}
-        <div>
+        <div className="flex flex-row gap-2">
           <select
-            className="border bg-white border-gray-400 rounded-md px-3 py-2.5 text-sm"
+            className="border bg-white border-gray-400 rounded-md px-3 py-1 md:py-2.5 text-sm"
             value={userCategory}
             onChange={(e) => handleFilters("userCategory", e.target.value)}
           >
@@ -50,20 +48,21 @@ const SoftwaresActions: React.FC<SoftwaresActionsProps> = ({
               </option>
             ))}
           </select>
-        </div>
 
-        {/* Add */}
-        <StyledButton
-          label="Add New Software"
-          type="button"
-          bgColor="bg-white hover:bg-cyan-500"
-          textColor="text-black hover:text-white"
-          onClick={() => handleAction("add")}
-        />
+          {/* Add */}
+          <StyledButton
+            label="Add New Software"
+            type="button"
+            bgColor="bg-white hover:bg-cyan-500"
+            padding="py-1 px-2"
+            textColor="text-black hover:text-white"
+            onClick={() => handleAction("add")}
+          />
+        </div>
       </div>
 
       {/* Total */}
-      <div className="text-white">Total: {total}</div>
+      <div className="text-white whitespace-nowrap">Total: {total}</div>
     </div>
   );
 };

@@ -36,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Navbar />
 
       {/* Content */}
-      <main className="w-full h-screen px-3 py-4 lg:px-2 bg-white text-black overflow-hidden">
+      <main className="w-full h-screen bg-white text-black overflow-hidden">
         {children}
       </main>
     </div>
